@@ -1,10 +1,10 @@
 # aws-bulk-tagging
- A tool for tagging AWS resources massively
+ A tool for tagging AWS resources massively.
 
-### Goal
+## Goal
 Apply a list of tags to a set of AWS resources.
 
-### Use case:
+## Use case
 You want to add or update the following tags:
                     
 | Key  | Value |
@@ -25,17 +25,36 @@ In this case, the request payload will be:
 {
   "TagFilters": [
     {
-      "Key": "lookForResourcesWithTagKey",
+      "Key": "Stage",
       "Values": [
-        "lookForResourcesWithTagValue"
+        "PROD"
+      ]
+    },
+    {
+      "Key": "App",
+      "Values": [
+        "AWESOME_SALES_APP"
       ]
     }
   ],
   "TagsToApply": {
-      "tagKeyToAddOrUpdate": "tagValueToAddOrUpdate"
+      "Entity": "SALES"
    },
   "ResourceTypeFilters": [
     "ec2:instance"
   ]
 }
 ```
+
+# How to use it?
+
+## Solution 1
+1. Install the Serverless Framework
+https://serverless.com/
+2. Configure your account and create at least one profile on your dashboard:
+https://dashboard.serverless.com/
+3. Clone this repository
+4. Open a terminal on your local project directory:
+`$ sls deploy [--stage dev] [--region eu-west-1]`
+
+## Solution 2
