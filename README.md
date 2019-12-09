@@ -48,13 +48,17 @@ In this case, the request payload will be:
 
 # How to use it?
 
-## Solution 1
-1. Install the Serverless Framework
-https://serverless.com/
-2. Configure your account and create at least one profile on your dashboard:
+## Solution 1: via GitHub
+1. Create a fork of this current repository in your GitHub account
+2. Create and configure a Serverless Framework account here:
 https://dashboard.serverless.com/
+3. Create a profile
+4. Create an app
+5. In this app, create a service and link it with the fork repository
+
+## Solution 2: via CLI
+1. Install the Serverless Framework: https://serverless.com/
+2. Configure your account and create at least one profile on your dashboard: https://dashboard.serverless.com/
 3. Clone this repository
 4. Open a terminal on your local project directory:
 `$ sls deploy [--stage dev] [--region eu-west-1]`
-
-## Solution 2
