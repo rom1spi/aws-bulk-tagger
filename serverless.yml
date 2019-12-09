@@ -26,8 +26,8 @@ provider:
   memorySize: 128 
 
 # you can overwrite defaults here
-  stage: dev
-  region: eu-west-3
+  stage: ${opt:stage, self:custom.defaultStage}
+  region: ${opt:region, self:custom.defaultRegion}
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -71,6 +71,9 @@ provider:
 #  exclude:
 #    - exclude-me.py
 #    - exclude-me-dir/**
+custom:
+    defaultRegion: eu-west-3
+    defaultStage: dev
 
 functions:
   bulk_tagger:
