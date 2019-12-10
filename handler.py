@@ -5,11 +5,12 @@ client = boto3.client('resourcegroupstaggingapi')
 
 def bulk_tagger(event, context):
     # get all resources with specified tags
+    
     resources = client.get_resources(
         ResourceTypeFilters = event["ResourceTypeFilters"],
         TagFilters = event["TagFilters"]
     )
-    # print(json.dumps(resources))
+    print(json.dumps(resources))
 
     # create a list off all resources ARNs
     arns_list = []
