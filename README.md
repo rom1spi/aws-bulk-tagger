@@ -61,7 +61,7 @@ In this case, the request payload to the Lambda function will be:
 2. Go to the [Serverless Framework dashboard](https://dashboard.serverless.com/) and create:
 - A profile
 - An app
-- A service (in the app), and link it to the fork repository
+- A service (in the app), and link it to the forked repository
 
 ## Solution 2: via CLI
 1. Install the Serverless Framework: https://serverless.com/
