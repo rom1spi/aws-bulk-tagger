@@ -61,9 +61,9 @@ In this case, the request payload will be:
 1. Install the Serverless Framework: https://serverless.com/
 2. Configure your account and create at least one profile on your dashboard: https://dashboard.serverless.com/
 3. Clone this repository
-4. Go to this line in `serverless.yml` and replace `<YOUR_ORG>` with your Serverless Org:
+4. Uncomment this line in `serverless.yml` and replace `<YOUR_ORG>` with your Serverless Org:
    ```json
-   org: <YOUR_ORG>
+   # org: <YOUR_ORG>
    ```
 5. Open a terminal on your local project directory:
 `
