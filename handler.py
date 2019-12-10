@@ -5,8 +5,12 @@ client = boto3.client('resourcegroupstaggingapi')
 
 def bulk_tagger(event, context):
     # get all resources with specified tags
-    if "TagFilters" not in event:
-        print("Pas de TagFilters :(")
+    if "TagFilters" not in event or "ResourceTypeFilters" not in event or "TagsToApply" not in event:
+        response = {
+            "statusCode": 400,
+            "body": "Missing arguments in your request. View README file to rectify your request payload."
+        }
+        return response
 
     resources = client.get_resources(
         ResourceTypeFilters = event["ResourceTypeFilters"],
