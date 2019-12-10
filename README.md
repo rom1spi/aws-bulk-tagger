@@ -1,7 +1,5 @@
 # aws-bulk-tagging
  A tool for tagging AWS resources massively.
- 
-[TOC]
 
 ## Goal
 Apply a list of tags to a set of AWS resources.
