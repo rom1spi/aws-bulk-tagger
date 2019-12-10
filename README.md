@@ -1,5 +1,7 @@
 # aws-bulk-tagging
  A tool for tagging AWS resources massively.
+ 
+[TOC]
 
 ## Goal
 Apply a list of tags to a set of AWS resources.
@@ -59,5 +61,18 @@ In this case, the request payload will be:
 1. Install the Serverless Framework: https://serverless.com/
 2. Configure your account and create at least one profile on your dashboard: https://dashboard.serverless.com/
 3. Clone this repository
-4. Open a terminal on your local project directory:
-`$ sls deploy [--stage dev] [--region eu-west-1]`
+4. Go to this line in `serverless.yml` and replace `<YOUR_ORG>` with your Serverless Org:
+   ```json
+   org: <YOUR_ORG>
+   ```
+5. Open a terminal on your local project directory:
+`
+$ sls deploy [--stage dev] [--region eu-west-1]
+`
+
+If you don't specify the `stage` and/or the `region`, il will use the values in the `custom` part of the `serverless.yml`:
+ ```json
+ custom:
+    defaultRegion: eu-west-3
+    defaultStage: dev
+ ```
