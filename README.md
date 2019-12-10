@@ -4,15 +4,20 @@
 ## Goal
 Apply a list of tags to a set of AWS resources.
 
+## Architecture
+
+This module is fully serverless.
+The architecture diagram is available [here](https://drive.google.com/file/d/1jkm8myPdMlQ0Kn7y97CIjkCmuJcnJhEn/view?usp=sharing).
+
 ## Use case
-You want to add or update the following tags:
+You want to add or update the following tags...
                     
 | Key  | Value |
 | ------------- | ------------- |
 | Entity  | SALES  |
                     
 
-To all EC2 instances tagged with:
+...to all EC2 instances tagged with:
                     
 | Key  | Value |
 | ------------- | ------------- |
@@ -20,7 +25,7 @@ To all EC2 instances tagged with:
 | App  | AWESOME_SALES_APP  |
                     
 
-In this case, the request payload will be:
+In this case, the request payload to the Lambda function will be:
 ```json
 {
   "TagFilters": [
