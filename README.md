@@ -9,6 +9,9 @@ Apply a list of tags to a set of AWS resources.
 This module is fully serverless.
 The architecture diagram is available [here](https://drive.google.com/file/d/1jkm8myPdMlQ0Kn7y97CIjkCmuJcnJhEn/view?usp=sharing).
 
+![](res/AWS_bulk_tagging_arch.png)
+
+
 ## Use case
 You want to add or update the following tags...
                     
