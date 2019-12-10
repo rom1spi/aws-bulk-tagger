@@ -10,7 +10,14 @@ def bulk_tagger(event, context):
         ResourceTypeFilters = event["ResourceTypeFilters"],
         TagFilters = event["TagFilters"]
     )
-    print(json.dumps(resources))
+    # print(json.dumps(resources))
+
+    if len(resources['ResourceTagMappingList']) == 0:
+        response = {
+            "statusCode": 204,
+            "body": "No resource to tag"
+        }
+        return response
 
     # create a list off all resources ARNs
     arns_list = []

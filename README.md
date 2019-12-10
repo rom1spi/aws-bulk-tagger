@@ -2,7 +2,7 @@
  A tool for tagging AWS resources massively.
 
 ## Goal
-Apply a list of tags to a set of AWS resources.
+Apply a list of tags to a (large) set of AWS resources within an AWS region.
 
 ## Architecture
 
