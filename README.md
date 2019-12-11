@@ -1,4 +1,4 @@
-# aws-bulk-tagging
+# aws-bulk-tagger
  A tool for tagging AWS resources massively.
 
 ## Goal
