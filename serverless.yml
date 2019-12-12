@@ -10,7 +10,8 @@
 service: aws-bulk-tagger
 # app and org for use with dashboard.serverless.com
 app: aws-bulk-tagger
-org: <YOUR_ORG>
+org: rom1spi
+# org: <YOUR_ORG>
 
 plugins:
   # https://serverless.com/plugins/serverless-pseudo-parameters/
@@ -77,7 +78,7 @@ resources:
     SNSNotifier:
       Type: AWS::SNS::Topic
       Properties: 
-        DisplayName: "Topic de notification des évènements de ${self:service}"
+        DisplayName: "[${self:service}] News from ${opt:region, self:custom.defaultRegion}"
         TopicName: ${self:custom.notifierTopicName}
 #  Outputs:
 #     NewOutput:

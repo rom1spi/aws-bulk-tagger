@@ -1,13 +1,13 @@
-from notifier import notify
+import notifier
 
 _STATUS_CODE = "statusCode"
 _BODY = "body"
 
 def manageReponse(statusCode, message, notify=True):
     response = {
-        _STATUS_CODE: statusCode,
-        _BODY: message
+        "statusCode": statusCode,
+        "body": message
     }
     if notify:
-        notify(statusCode, message)
+        notifier.notify(statusCode, message)
     return response

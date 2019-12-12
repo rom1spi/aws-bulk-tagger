@@ -10,9 +10,6 @@ _RESOURCE_TYPE_FILTERS = "ResourceTypeFilters"
 _RESOURCE_TAG_MAPPING_LIST = "ResourceTagMappingList"
 _FAILED_RESOURCES_MAP = "FailedResourcesMap"
 
-_STATUS_CODE = "statusCode"
-_BODY = "body"
-
 def bulk_tagger(event, context):
     # check request's arguments
     if _TAG_FILTERS not in event or _RESOURCE_TYPE_FILTERS not in event or _TAGS_TO_APPLY not in event:

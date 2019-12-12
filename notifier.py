@@ -10,7 +10,7 @@ def notify(statusCode, message):
     # Publish a simple message to the specified SNS topic
     response = sns.publish(
         TopicArn=_NOTIFIER_TOPIC_ARN,    
-        Message="Status Code: "+statusCode+" | Message:"+message,    
+        Message="Status Code: "+str(statusCode)+" | Message: "+message,    
     )
 
     # Print out the response

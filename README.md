@@ -83,6 +83,13 @@ If you don't specify the `stage` and/or the `region`, il will use the values in 
     defaultStage: dev
  ```
 
+## Notifications
+
+If you want to be notified when something went wrong:
+1. Go to the AWS Console: https://aws.amazon.com/fr/console/
+2. Go to SNS service
+3. Add a subscription (by email for example) to the topic named `aws-bulk-tagger-notifier-<stage>`
+
 # List of taggable resources
 
 - Alexa for Business (a4b)
