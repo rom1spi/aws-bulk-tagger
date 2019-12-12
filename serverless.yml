@@ -10,8 +10,7 @@
 service: aws-bulk-tagger
 # app and org for use with dashboard.serverless.com
 app: aws-bulk-tagger
-org: rom1spi
-# org: <YOUR_ORG>
+org: <YOUR_ORG>
 
 plugins:
   # https://serverless.com/plugins/serverless-pseudo-parameters/
