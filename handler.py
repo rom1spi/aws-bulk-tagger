@@ -1,5 +1,6 @@
 import json
 import boto3
+from responseManager import manageReponse
 
 client = boto3.client('resourcegroupstaggingapi')
 
@@ -15,39 +16,22 @@ _BODY = "body"
 def bulk_tagger(event, context):
     # check request's arguments
     if _TAG_FILTERS not in event or _RESOURCE_TYPE_FILTERS not in event or _TAGS_TO_APPLY not in event:
-        response = {
-            _STATUS_CODE: 400,
-            "body": "Missing arguments in your request. View README file to rectify your request payload."
-        }
-        return response
+        return manageReponse(400,"Missing arguments in your request. View README file to rectify your request payload.")
 
-    # get all resources with specified tags
     try:
+        # get all resources with specified tags
         resources = client.get_resources(
             ResourceTypeFilters = event[_RESOURCE_TYPE_FILTERS],
             TagFilters = event[_TAG_FILTERS]
         )
         # print(json.dumps(resources))
     except KeyError as err:
-        response = {
-            _STATUS_CODE: 204,
-            _BODY: "KeyError: {0}".format(err)
-        }
-        return response
+        return manageReponse(204,"KeyError: {0}".format(err))
     except:
-        response = {
-            _STATUS_CODE: 500,
-            _BODY: "Unexpected error: {0}".format(sys.exc_info()[0])
-        }
-        return response
-    
+        return manageReponse(500,"Unexpected error: {0}".format(sys.exc_info()[0]))
 
     if len(resources[_RESOURCE_TAG_MAPPING_LIST]) == 0:
-        response = {
-            _STATUS_CODE: 204,
-            _BODY: "No resource to tag"
-        }
-        return response
+        return manageReponse(204,"No resource to tag")
 
     # create a list off all resources ARNs
     arns_list = []
@@ -62,14 +46,7 @@ def bulk_tagger(event, context):
     FailedResourcesMap = tagging_result[_FAILED_RESOURCES_MAP]
     count_FailedResourcesMap = len(FailedResourcesMap)
 
-    statusCode=200
     if count_FailedResourcesMap > 0:
-        statusCode=500
-        # TODO send a email
+        return manageReponse(500,json.dumps(FailedResourcesMap))
 
-    response = {
-        _STATUS_CODE: statusCode,
-        _BODY: json.dumps(FailedResourcesMap)
-    }
-
-    return response
+    return manageReponse(200,json.dumps(FailedResourcesMap), False)
