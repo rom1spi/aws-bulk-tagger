@@ -64,14 +64,15 @@ In this case, the request payload to the Lambda function will be:
 - A service (in the app), and link it to the forked repository
 
 ## Solution 2: via CLI
-1. Install the Serverless Framework: https://serverless.com/
-2. Configure your account and create at least one profile on your dashboard: https://dashboard.serverless.com/
-3. Clone this repository
-4. Uncomment this line in `serverless.yml` and replace `<YOUR_ORG>` with your Serverless Org:
+1. Install the Serverless Framework (https://serverless.com/): `npm install -g serverless`
+2. Install plugin: `npm install serverless-pseudo-parameters`
+3. Configure your account and create at least one profile on your dashboard: https://dashboard.serverless.com/
+4. Clone this repository
+5. Uncomment this line in `serverless.yml` and replace `<YOUR_ORG>` with your Serverless Org:
    ```json
    # org: <YOUR_ORG>
    ```
-5. Open a terminal on your local project directory:
+6. Open a terminal on your local project directory:
 `
 $ sls deploy [--stage dev] [--region eu-west-1]
 `
