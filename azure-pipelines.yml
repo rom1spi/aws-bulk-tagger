@@ -1,0 +1,28 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+
+- script: npm install
+  displayName: 'Install npm'
+- script: npm install -g serverless
+  displayName: 'Install Serverless Framework'
+- script: npm install serverless-pseudo-parameters
+  displayName: 'Install sls plugin'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: '.'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
