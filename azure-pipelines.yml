@@ -19,3 +19,6 @@ jobs:
   steps:
     - script: git clone https://github.com/rom1spi/aws-bulk-tagger
       displayName: Clone git repo
+    - script: |
+        cd aws-bulk-tagger
+        sls deploy -v
