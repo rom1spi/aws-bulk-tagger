@@ -8,10 +8,10 @@ resources:
     - repository: templates
       type: git
       name: CloudFabric-Internal/serverless-framework-install
-    - repository: templates
+    - repository: tagger
       name: rom1spi/aws-bulk-tagger
       endpoint: rom1spi
 
 jobs:
 - template: install-serverless-framework.yml@templates
-- template: serverless.yml@templates
+- template: serverless.yml@tagger
