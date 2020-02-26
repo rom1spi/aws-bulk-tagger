@@ -21,4 +21,4 @@ jobs:
       displayName: Clone git repo
     - script: |
         cd aws-bulk-tagger
-        sls deploy -v
+        serverless deploy -v
