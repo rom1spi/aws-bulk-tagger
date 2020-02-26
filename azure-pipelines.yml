@@ -6,23 +6,11 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: CloudFabric-Internal/serverless-framework-install
 
-steps:
-
-- script: npm install
-  displayName: 'Install npm'
-- script: sudo npm install -g serverless
-  displayName: 'Install Serverless Framework'
-- script: npm install serverless-pseudo-parameters
-  displayName: 'Install sls plugin'
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: '.'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+jobs:
+- template: install-serverless-framework.yml@templates  # Template reference
