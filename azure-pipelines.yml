@@ -14,11 +14,11 @@ resources:
       endpoint: rom1spi
 
 jobs:
-- template: install-serverless-framework.yml@sls_install
-- job: clone
+- job: install_clone_deploy
   steps:
+    - template: install-serverless-framework.yml@sls_install
     - script: git clone https://github.com/rom1spi/aws-bulk-tagger
       displayName: Clone git repo
     - script: |
         cd aws-bulk-tagger
-        serverless deploy -v
+        sls deploy -v
