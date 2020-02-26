@@ -5,13 +5,14 @@
 
 resources:
   repositories:
-    - repository: templates
+    - repository: sls_install
       type: git
       name: CloudFabric-Internal/serverless-framework-install
-    - repository: tagger
+    - repository: aws_bulk_tagger
+      type: github
       name: rom1spi/aws-bulk-tagger
       endpoint: rom1spi
 
 jobs:
-- template: install-serverless-framework.yml@templates
-- template: serverless.yml@tagger
+- template: install-serverless-framework.yml@sls_install
+- template: serverless.yml@aws_bulk_tagger
