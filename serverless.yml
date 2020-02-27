@@ -7,11 +7,6 @@
 #
 # Happy Coding!
 
-service: aws-bulk-tagger
-# app and org for use with dashboard.serverless.com
-app: aws-bulk-tagger
-org: <YOUR_ORG>
-
 plugins:
   # https://serverless.com/plugins/serverless-pseudo-parameters/
   - serverless-pseudo-parameters
