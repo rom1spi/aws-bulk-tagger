@@ -7,6 +7,8 @@
 #
 # Happy Coding!
 
+service: aws-bulk-tagger
+
 plugins:
   # https://serverless.com/plugins/serverless-pseudo-parameters/
   - serverless-pseudo-parameters
