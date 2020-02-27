@@ -26,7 +26,8 @@ jobs:
     - script: |
         export AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY_ID)
         export AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY)
-        set
         cd aws-bulk-tagger
+        pwd
+        echo $AWS_ACCESS_KEY_ID
         sudo sls deploy -v
       displayName: Serverless deploy
