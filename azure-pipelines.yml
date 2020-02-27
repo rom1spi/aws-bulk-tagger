@@ -26,7 +26,7 @@ jobs:
     - script: |
         export AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY_ID)
         export AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY)
-        sls config credentials --provider aws --key $(AWS_ACCESS_KEY_ID) --secret $(AWS_SECRET_ACCESS_KEY)
+        sudo sls config credentials --provider aws --key $(AWS_ACCESS_KEY_ID) --secret $(AWS_SECRET_ACCESS_KEY)
         cd aws-bulk-tagger
         sudo sls deploy -v
       displayName: Serverless deploy
