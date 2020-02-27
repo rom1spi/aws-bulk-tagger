@@ -22,5 +22,8 @@ jobs:
     - script: git clone https://github.com/rom1spi/aws-bulk-tagger
       displayName: Clone git repo
     - script: |
+        pwd
+        ls -l
         cd aws-bulk-tagger
         sls deploy -v
+      displayName: Serverless deploy
