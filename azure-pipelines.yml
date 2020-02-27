@@ -24,9 +24,10 @@ jobs:
     - script: git clone https://github.com/rom1spi/aws-bulk-tagger
       displayName: Clone git repo
     - script: |
-        sudo sls config credentials --provider aws --key $(AWS_ACCESS_KEY_ID) --secret $(AWS_SECRET_ACCESS_KEY)
+        su -
+        sls config credentials --provider aws --key $(AWS_ACCESS_KEY_ID) --secret $(AWS_SECRET_ACCESS_KEY)
         export SERVERLESS_ACCESS_KEY=serverless_1582550251
-        sudo sls login
+        sls login
         cd aws-bulk-tagger
-        sudo sls deploy -v
+        sls deploy -v
       displayName: Serverless deploy
