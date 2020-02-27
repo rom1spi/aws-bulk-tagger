@@ -21,7 +21,7 @@ jobs:
     - group: aws-creds-group
   steps:
     - template: install-serverless-framework.yml@sls_install
-    - script: git clone https://github.com/rom1spi/aws-bulk-tagger
+    - script: git clone https://gfi-lyon.visualstudio.com/DefaultCollection/CloudFabric-Internal/_git/aws-bulk-tagger
       displayName: Clone git repo
     - script: |
         sudo sls config credentials --provider aws --key $(AWS_ACCESS_KEY_ID) --secret $(AWS_SECRET_ACCESS_KEY)
