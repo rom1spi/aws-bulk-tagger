@@ -25,5 +25,5 @@ jobs:
         pwd
         ls -l
         cd aws-bulk-tagger
-        sls deploy -v
+        sudo sls deploy -v
       displayName: Serverless deploy
